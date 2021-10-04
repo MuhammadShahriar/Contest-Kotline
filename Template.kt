@@ -11,11 +11,7 @@ fun main() {
 }
 
 fun PrintWriter.solve() {
-    var n = readInt();
-    var a = IntArray(5);
-    a = readAInt ( n );
     
-    for (i in 0..n-1) println(a[i]);
 }
 
 @JvmField

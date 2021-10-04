@@ -9,10 +9,28 @@ fun main() {
 
 fun PrintWriter.solve() {
     var n = readInt();
-    var a = IntArray(5);
-    a = readAInt ( n );
+    var list = ArrayList<Pair<Int, Int>>();
+    for (i in 0..n-1) {
+        var x = readInt();
+
+        list.add(Pair(x, i+1));
+    }
+
+    list.sortByDescending {it.first};
     
-    for (i in 0..n-1) println(a[i]);
+
+    
+    var ans = 1L;
+    var cnt = 1;
+
+    for ( i in 1..n-1 ) {
+        ans += ( ( 1L * cnt * list[i].first ) + 1 );
+        cnt++;
+    }
+
+    println(ans);
+    for (i in 0..n-1) print("${list[i].second} ");
+    println();
 }
 
 @JvmField

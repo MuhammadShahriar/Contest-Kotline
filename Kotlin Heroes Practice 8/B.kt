@@ -18,5 +18,42 @@ private fun myAssert(x: Boolean) {
 }
 
 fun main(args: Array<String>) {
-    
+    var a1 = readInt();
+    var a2 = readInt();
+    var k1 = readInt();
+    var k2 = readInt();
+    var n = readInt();
+
+    var smA = 0;
+    var smK = 0;
+    var lgA = 0;
+    var lgK = 0;
+
+    if ( k1 < k2 ) {
+        smA = a1;
+        smK = k1;
+
+        lgA = a2;
+        lgK = k2;
+    }
+    else {
+        smA = a2;
+        smK = k2;
+
+        lgA = a1;
+        lgK = k1;
+    }
+
+    var smG = minOf ( smA, n / smK );
+    var rem = n - ( smG * smK );
+
+    var lgG = minOf ( lgA, rem / lgK );
+
+    var ansMx = smG + lgG;
+
+    n -= minOf ( n, ( ( a1 * (k1-1) ) + ( a2 * ( k2-1 ) ) ) );
+
+    var ansMn = n;
+
+    println("${ansMn} ${ansMx}");
 }

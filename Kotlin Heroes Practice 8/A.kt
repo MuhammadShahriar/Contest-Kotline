@@ -1,3 +1,5 @@
+///In the name of ALLAH
+
 import java.lang.AssertionError
  
 private fun readLn() = readLine()!! // string line
